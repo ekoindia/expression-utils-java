@@ -3,6 +3,9 @@ package in.eko.exprutils;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class ExpressionParserTest {
     @Test
@@ -41,5 +44,14 @@ public class ExpressionParserTest {
         assertEquals("3",
                 ExpressionParser.parseExpression("['GET', {'a':1, 'b':{'c':2, 'd':{'e': 3}}}, 'b.d.e', '0']").toString()
         );
+    }
+
+    @Test
+    public void testInterpolation() throws Exception {
+        Map<String, String> data = new HashMap<String, String>();
+        data.put("name", "Abhishek");
+        data.put("age", "35");
+
+        assertEquals("Hi, my name is Abhishek. I'm 35 years old", ExpressionParser.interpolate("Hi, my name is ${name}. I'm ${age} years old", data));
     }
 }

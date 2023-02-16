@@ -5,6 +5,8 @@ package in.eko.exprutils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import in.eko.exprutils.interfaces.OperatorFunction;
 import org.json.JSONArray;
@@ -51,6 +53,27 @@ public class ExpressionParser {
      */
     public static boolean isValidOperator(String operator) {
         return operatorMap.containsKey(operator);
+    }
+
+
+    /**
+     * Interpolate/replace values of dollar-curly-brace-wrapped variables into a string.
+     * @param expr The string where variables are to be replaced. Eg: "Hello, ${name}"
+     * @param data The map of variable-value pairs
+     * @return The interpolated string with the variables replaced
+     */
+    public static String interpolate(String expr, Map<String, String> data) {
+        Pattern pattern = Pattern.compile("\\$\\{(\\w+)\\}");
+        Matcher matcher = pattern.matcher(expr);
+
+        StringBuffer sb = new StringBuffer();
+        while (matcher.find()) {
+            String newString = data.getOrDefault(matcher.group(1), matcher.group(0));
+            matcher.appendReplacement(sb, newString);
+        }
+        matcher.appendTail(sb);
+
+        return sb.toString();
     }
 
     /**
