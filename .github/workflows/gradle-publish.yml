@@ -33,11 +33,13 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: wrapper
+        gradle-version: 7.6
         
     - name: Build with Gradle
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: build
+        gradle-version: 7.6
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
@@ -45,6 +47,7 @@ jobs:
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: publish
+        gradle-version: 7.6
       env:
         USERNAME: ekodevelops
         TOKEN: ${{ secrets.CICD_GITHUB_TOKEN }}
