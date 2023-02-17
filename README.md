@@ -1,12 +1,21 @@
 # expression-utils-java
 Java utility library (with static methods) to parse array-based nested expressions.
 
+[![GitHub issues](https://img.shields.io/github/issues/ekoindia/aeps-gateway-lib)](https://github.com/ekoindia/aeps-gateway-lib/issues)
+<a href="https://eko.in" target="_blank">![Eko.in](https://img.shields.io/badge/Develop%20with-Eko.in-brightgreen)</a>
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fekoindia%2Faeps-gateway-lib" target="_blank"><img alt="Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fekoindia%2Faeps-gateway-lib"></a>
+<a href="https://twitter.com/intent/follow?screen_name=ekospeaks" target="_blank">![Twitter Follow](https://img.shields.io/twitter/follow/ekospeaks?label=Follow&style=social)</a>
+<a href="http://dsc.gg/ekodevs" target="_blank">![Discord Chat](https://img.shields.io/discord/1038006952573292574)</a>
+
+---
+
 ## Usage
-```java  
-class Examples {  
-    public static void main(String[] args) {                // Single expression: 2 + 3  
-        (int)ExpressionParser.parseExpression("['+', 2, 3]");  // returns 5  
-        // Nested expression: 2 + (3 * 4)        (int)ExpressionParser.parseExpression("['+', 2, ['*', 3, 4]]");  // returns 14    }}  
+```java
+// Single expression example: 2 + 3
+(int)ExpressionParser.parseExpression("['+', 2, 3]");  // returns 5
+
+// Nested expression example: 2 + (3 * 4)
+(int)ExpressionParser.parseExpression("['+', 2, ['*', 3, 4]]");  // returns 14
 ```
 
 > Note: see the [test cases](lib/src/test/java/in/eko/exprutils/) for detailed examples.
