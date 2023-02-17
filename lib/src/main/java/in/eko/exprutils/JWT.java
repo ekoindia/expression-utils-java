@@ -124,6 +124,14 @@ public class JWT {
     }
 
 
+    /**
+     * Validates and parses a JWT (token). If valid, returns a Map of key-value pairs of the claims.
+     * @param token The JWT to parse.
+     * @param secretKey The secure key that was used to encrypt the token
+     * @param algo The encryption algorithm used to generate the token
+     * @return  The Map of claim (payload) key-value pairs.
+     * @throws JWTVerificationException if the token cannot be verified
+     */
     public static Map<String, Claim> parse(String token, String secretKey, String algo) throws JWTVerificationException {
         DecodedJWT jwt;
         Algorithm algorithm = null;

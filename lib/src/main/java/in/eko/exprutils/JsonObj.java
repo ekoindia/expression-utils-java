@@ -83,7 +83,7 @@ public class JsonObj {
 
 
     /**
-     * Private generic method to set a key-value pair deep within a JSON Object.
+     * Set a key-value pair deep within a JSON Object.
      * @param obj String serialized JSON object to insert value into.
      * @param key The key for inserting value into the object. Deep/nested path is
      *            represented by dot notation. Unavailable object path is created.

@@ -183,7 +183,7 @@ public class ExpressionParser {
     }
 
     /**
-     * Returns nested value from a Json object identified by the key.
+     * Set a nested value in a Json object identified by the key.
      * @param operand1 String serialized Json Object
      * @param operand2 key (using dot notation for nested values)
      * @param operand3 value
@@ -206,6 +206,13 @@ public class ExpressionParser {
         return (Object) Hash.md5(operand1.toString());
     }
 
+    /**
+     * Generate JWT
+     * @param operand1  secretKey
+     * @param operand2  algorithm
+     * @param operand3  String encoded Json with details like claim, issuer, etc
+     * @return the generated token
+     */
     private static Object generateJwt(Object operand1, Object operand2, Object operand3) {
         String opt = operand3.toString();
         String data = JsonObj.get(opt, "claim", "").toString();

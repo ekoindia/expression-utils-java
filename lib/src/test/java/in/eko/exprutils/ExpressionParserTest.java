@@ -44,6 +44,11 @@ public class ExpressionParserTest {
         assertEquals("3",
                 ExpressionParser.parseExpression("['GET', {'a':1, 'b':{'c':2, 'd':{'e': 3}}}, 'b.d.e', '0']").toString()
         );
+
+        // Test deep set...
+        assertEquals("{\"b\":{\"d\":{\"e\":\"4\"}}}",
+                ExpressionParser.parseExpression("['SET', {'b':{'d':{}}}, 'b.d.e', 4]").toString()
+        );
     }
 
     @Test
