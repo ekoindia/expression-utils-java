@@ -2,11 +2,12 @@
 Java utility library (with static methods) to parse array-based nested expressions.
 
 ## Usage
-```java  
-class Examples {  
-    public static void main(String[] args) {                // Single expression: 2 + 3  
-        (int)ExpressionParser.parseExpression("['+', 2, 3]");  // returns 5  
-        // Nested expression: 2 + (3 * 4)        (int)ExpressionParser.parseExpression("['+', 2, ['*', 3, 4]]");  // returns 14    }}  
+```java
+// Single expression example: 2 + 3
+(int)ExpressionParser.parseExpression("['+', 2, 3]");  // returns 5
+
+// Nested expression example: 2 + (3 * 4)
+(int)ExpressionParser.parseExpression("['+', 2, ['*', 3, 4]]");  // returns 14
 ```
 
 > Note: see the [test cases](lib/src/test/java/in/eko/exprutils/) for detailed examples.
