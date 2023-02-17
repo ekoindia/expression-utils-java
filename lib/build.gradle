@@ -9,9 +9,10 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
+    id 'maven-publish'
 }
 
-version = '0.1.0'
+version = '0.5.0'
 
 java {
     withSourcesJar()
@@ -54,5 +55,23 @@ tasks.named('jar') {
                 'Build-Jdk': org.gradle.internal.jvm.Jvm.current(),
                 'Gradle-Version': GradleVersion.current().toString()
         )
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/ekoindia/expression-utils-java")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+                password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
+        }
     }
 }
