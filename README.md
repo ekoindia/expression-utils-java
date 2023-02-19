@@ -15,7 +15,9 @@ Java utility library (with static methods) to parse array-based nested expressio
 - In the [Packages](https://github.com/orgs/ekoindia/packages?repo_name=expression-utils-java) section, select the package `expression-utils-java.lib`
 - Follow the installation instructions
 
-## Example Usage
+## Usage
+
+### Example 
 ```java
 import in.eko.exprutils.ExpressionParser;
 
