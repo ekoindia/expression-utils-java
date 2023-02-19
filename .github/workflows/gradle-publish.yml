@@ -33,10 +33,10 @@ jobs:
       uses: gradle/gradle-build-action@v2
         
     - name: Build with Gradle
-      run: ./gradlew build
-      #uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      #with:
-      #  arguments: build
+      #run: ./gradlew build
+      uses: gradle/gradle-build-action@v2
+      with:
+        arguments: build
       #  gradle-version: 7.6
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
