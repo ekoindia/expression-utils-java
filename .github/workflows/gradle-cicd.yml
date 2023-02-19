@@ -16,7 +16,7 @@ jobs:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -50,11 +50,7 @@ jobs:
         USERNAME: ekodevelops
         TOKEN: ${{ secrets.CICD_GITHUB_TOKEN }}
 
-    - name: Deploy JavaDoc 🚀
-      uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
+    - name: Deploy Javadocs 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        javadoc-branch: javadoc
-        java-version: 11
-        target-folder: javadoc 
-        project: gradle
+        folder: lib/build/docs/javadoc
