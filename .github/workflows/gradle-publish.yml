@@ -5,7 +5,7 @@
 # This workflow will build a package using Gradle and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#Publishing-using-gradle
 
-name: Gradle Package
+name: Java CI/CD/Publish with Gradle on Release
 
 on:
   release:
@@ -30,24 +30,22 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Set up Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        arguments: wrapper
-        gradle-version: 7.6
+      uses: gradle/gradle-build-action@v2
         
     - name: Build with Gradle
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
-      with:
-        arguments: build
-        gradle-version: 7.6
+      run: ./gradlew build
+      #uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      #with:
+      #  arguments: build
+      #  gradle-version: 7.6
 
     # The USERNAME and TOKEN need to correspond to the credentials environment variables used in
     # the publishing section of your build.gradle
     - name: Publish to GitHub Packages
-      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      uses: gradle/gradle-build-action@v2
       with:
         arguments: publish
-        gradle-version: 7.6
+        # gradle-version: 7.6
       env:
         USERNAME: ekodevelops
         TOKEN: ${{ secrets.CICD_GITHUB_TOKEN }}
