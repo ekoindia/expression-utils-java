@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -31,15 +34,23 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build-and-javadoc
+          retention-days: 1
           path: |
             lib/build/libs
             lib/build/docs
-            
-      - name: Deploy JavaDoc 🚀
-        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
+      
+      
+      - name: Deploy docs 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc
-          java-version: 11
-          target-folder: javadoc 
-          project: gradle
+          folder: lib/build/docs/javadoc
+          
+      
+#       - name: Deploy JavaDoc 🚀
+#         uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
+#         with:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           javadoc-branch: javadoc
+#           # java-version: 11
+#           target-folder: javadoc 
+#           project: gradle
