@@ -9,8 +9,14 @@ Java utility library (with static methods) to parse array-based nested expressio
 
 ---
 
-## Usage
+## Installation & 
+- In the [Packages](https://github.com/orgs/ekoindia/packages?repo_name=expression-utils-java) section, select the package `expression-utils-java.lib`
+- Follow the installation instructions
+
+## Example Usage
 ```java
+import in.eko.exprutils.ExpressionParser;
+
 // Single expression example: 2 + 3
 (int)ExpressionParser.parseExpression("['+', 2, 3]");  // returns 5
 
@@ -54,8 +60,14 @@ Java utility library (with static methods) to parse array-based nested expressio
 
 
 ## Contribution Guide
-### Build
+
+### Local Test
+- ` ./gradlew test --info `
+
+### Local Build
 - `./gradlew build`
 
-### Test
-- ` ./gradlew test --info `
+### Publish New Release
+- Merge changes into the main branch
+- Goto the [Releases](/releases) section and create a new release
+- A new build will automatically be created and published to [Github Packages](https://github.com/orgs/ekoindia/packages?repo_name=expression-utils-java)
