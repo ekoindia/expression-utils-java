@@ -17,6 +17,8 @@ Java utility library (with static methods) to parse array-based nested expressio
 - Or, download the library jar file and include in your Java project
 
 ## Usage
+- See [Javadocs](https://ekoindia.github.io/expression-utils-java/)
+- See the [test cases](lib/src/test/java/in/eko/exprutils/) for detailed examples.
 
 ### Example 
 ```java
@@ -28,8 +30,6 @@ import in.eko.exprutils.ExpressionParser;
 // Nested expression example: 2 + (3 * 4)
 (int)ExpressionParser.parseExpression("['+', 2, ['*', 3, 4]]");  // returns 14
 ```
-
-> Note: see the [test cases](lib/src/test/java/in/eko/exprutils/) for detailed examples.
 
 
 ### Available functions:
