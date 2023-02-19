@@ -26,7 +26,15 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
-          
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-and-javadoc
+          path: |
+            lib/build/libs
+            lib/build/docs
+            
       - name: Deploy JavaDoc 🚀
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
         with:
