@@ -73,6 +73,7 @@ import in.eko.exprutils.ExpressionParser;
 - `./gradlew build`
 
 ### Publish New Release
+- Make sure to update the `version` number in the lib/build.gradle file
 - Merge changes into the main branch
 - Goto the [Releases](/releases) section and create a new release
 - A new build will automatically be created and published to [Github Packages](https://github.com/orgs/ekoindia/packages?repo_name=expression-utils-java)
