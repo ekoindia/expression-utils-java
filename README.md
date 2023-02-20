@@ -36,16 +36,16 @@ import in.eko.exprutils.ExpressionParser;
 
 | Class            | Method            | Inputs                                                  | Output                | Desc                                                                             |
 |------------------|-------------------|---------------------------------------------------------|-----------------------|----------------------------------------------------------------------------------|
-| ExpressionParser | parseExpression() | expression (string encoded Json array)                  | parsed value (Object) | returns parses an expression                                                     |
+| [ExpressionParser](https://ekoindia.github.io/expression-utils-java/in/eko/exprutils/ExpressionParser.html) | parseExpression() | expression (string encoded Json array)                  | parsed value (Object) | returns parses an expression                                                     |
 |                  | isValidOperator() | String operator                                         | boolean               | Checks if the provided operator is supported by the expressionParser             |
 |                  | interpolate()     | String expr, Map<String, String> data                   | interpolated string   | Interpolate/replace values of dollar-curly-brace-wrapped variables into a string |
-| Hash             | getHash()         | String input, String type                               | hash                  | Generate hash of a string using the `type` algorithm (MD5, SHA-256, etc)         |
+| [Hash](https://ekoindia.github.io/expression-utils-java/in/eko/exprutils/Hash.html)             | getHash()         | String input, String type                               | hash                  | Generate hash of a string using the `type` algorithm (MD5, SHA-256, etc)         |
 |                  | sha256()          | String input                                            | sha-256 hash          | Generate SHA-256 hash of a string                                                |
 |                  | sha512()          | String input                                            | sha-512 hash          | Generate SHA-512 hash of a string                                                |
 |                  | md5()             | String input                                            | md5 hash              | Generate md5 hash of a string                                                    |
-| JsonObj          | get()             | String/JSONObject obj, String key, String default_value | value (Object)        | Retrieve deep/nested value from a JSON Object                                    |
+| [JsonObj](https://ekoindia.github.io/expression-utils-java/in/eko/exprutils/JsonObj.html)          | get()             | String/JSONObject obj, String key, String default_value | value (Object)        | Retrieve deep/nested value from a JSON Object                                    |
 |                  | set()             | String obj, String key, Object value                    | object (String)       | Set a key-value pair deep within a JSON Object                                   |
-| JWT              | generate()        | ...                                                     | generated token       | Generate JWT (token) with the given configuration                                |
+| [JWT](https://ekoindia.github.io/expression-utils-java/in/eko/exprutils/JWT.html)              | generate()        | ...                                                     | generated token       | Generate JWT (token) with the given configuration                                |
 |                  | parse()           | ...                                                     | claim map             | Validates & parses a JWT (token)                                                 |
 
 ### Operators supported by the parseExpression() function:
