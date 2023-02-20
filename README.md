@@ -17,8 +17,8 @@ Java utility library (with static methods) to parse array-based nested expressio
 - Or, download the library jar file and include in your Java project
 
 ## Usage
-- See [Javadocs](https://ekoindia.github.io/expression-utils-java/)
-- See the [test cases](lib/src/test/java/in/eko/exprutils/) for detailed examples.
+- See the [Javadoc](https://ekoindia.github.io/expression-utils-java/) for detailed documentation.
+- See the [test cases](lib/src/test/java/in/eko/exprutils/) for detailed usage examples.
 
 ### Example 
 ```java
